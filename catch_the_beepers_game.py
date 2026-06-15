@@ -1,8 +1,9 @@
+
 import keyboard
 import time
 import random
 
-# 1. Map configuration (15x15 matrix)
+# Map configuration (15x15 matrix)
 WIDTH = 15
 HEIGHT = 15
 
@@ -14,14 +15,14 @@ position_y = 0
 beeper_position_x = random.randint(0, 14)
 beeper_position_y = random.randint(0, 14)
 
+# Score
 points = 0
 
-# 2. Time configuration
+# Time configuration
 TIME_LIMIT = 30  # Total game time in seconds
-start_time = time.time()  # Stores the exact moment the game starts
 
 def draw_scene(time_remaining):
-    """Draws the map, score, and remaining time."""
+    """Draws the map, score, and remaining time"""
     scene = ""
     
     for y in range(HEIGHT):
@@ -33,8 +34,9 @@ def draw_scene(time_remaining):
             else:
                 scene += " . "  
         scene += "\n"
-        
+
     print("\n" * 15)
+
     # Display remaining time formatted with one decimal place
     print(f"⏱️ TIME: {time_remaining:.1f}s | 🏆 POINTS: {points}")
     print(scene)
